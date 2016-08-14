@@ -1,0 +1,65 @@
+
+use w2local
+
+
+// CREATE ..................................................................
+
+db.moviesScratch.insertOne({"title":"Rocky", "year":"1975", "imdb":"tt0075148"});
+{
+	"_id" : ObjectId("57aa9f58bee648e320bf4bf3"),
+	"title" : "Rocky",
+	"year" : "1975",
+	"imdb" : "tt0075148"
+}
+
+DATE=	57aa9f58 14707997 04
+MAC=	bee648
+PID=	e320
+COUNT=	bf4bf3
+
+
+db.moviesScratch.find().pretty();
+
+
+db.moviesScratch.insertMany([
+	{"title":"Star Trek III", "year":"2009", "_id":"tt0075149"},
+	{"title":"Star Trek II", "year":"1996", "_id":"tt0075150"},
+	{"title":"Star Trek I", "year":"1982", "_id":"tt0075151"},
+	{"title":"Star Trek IV", "year":"2013", "_id":"tt0075152"}
+]);
+
+
+db.moviesScratch.drop();
+
+
+
+db.moviesScratch.insertMany([
+	{"title":"Star Trek III", "year":"2009", "_id":"tt0075149"},
+	{"title":"Star Trek II", "year":"1996", "_id":"tt0075150"},
+	{"title":"Star Trek II", "year":"1996", "_id":"tt0075150"},
+	{"title":"Star Trek I", "year":"1982", "_id":"tt0075151"},
+	{"title":"Star Trek IV", "year":"2013", "_id":"tt0075152"}
+]);
+
+db.moviesScratch.drop();
+
+
+db.moviesScratch.insertMany([
+	{"title":"Star Trek III", "year":"2009", "_id":"tt0075149"},
+	{"title":"Star Trek II", "year":"1996", "_id":"tt0075150"},
+	{"title":"Star Trek II", "year":"1996", "_id":"tt0075150"},
+	{"title":"Star Trek I", "year":"1982", "_id":"tt0075151"},
+	{"title":"Star Trek IV", "year":"2013", "_id":"tt0075152"}
+], {
+	"ordered": false
+});
+
+db.moviesScratch.drop();
+
+// READ ....................................................................
+
+db.moviesDetails.find({"rated":"G","year":2010}).count();
+
+db.moviesDetails.find({"rated":"G"},{"title": 1, "year":1});
+
+// COMPARATION .............................................................
