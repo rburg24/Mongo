@@ -7,6 +7,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/hw1-3/pom.xml" />
+        <option value="$PROJECT_DIR$/com.mongodb/pom.xml" />
       </list>
     </option>
   </component>

@@ -23,11 +23,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="hw1-3" />
+        <module name="M101J-LOCAL" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="com.mongodb" target="1.8" />
       <module name="hw1-3" target="1.5" />
+      <module name="M101J-LOCAL" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
